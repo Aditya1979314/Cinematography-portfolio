@@ -22,7 +22,7 @@ const[data,setdata] = useState([
 
 
     return (
-        <div className="px-4 h-screen border-white mt-2 ">
+        <div className="px-4 h-svh border-white mt-2 flex flex-col justify-between">
             <h1 className="text-3xl font-semibold text-white text-center">WORKS</h1>
 
             <div className="text-white text-xl flex justify-around mt-8">

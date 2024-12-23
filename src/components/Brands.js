@@ -4,7 +4,7 @@
 
 export function Brands(){
     return (
-        <div>
+        <div className="mt-12"> 
             <h1 className="text-3xl text-center font-bold text-white p-2">Brand Collaborations</h1>
 
             <div className="grid grid-cols-2 gap-3 px-2 mt-8">

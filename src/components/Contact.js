@@ -7,8 +7,8 @@ export function Contact(){
         <div className="p-2 mt-12 h-svh">
             <h1 className="text-3xl text-white font-bold text-center">Get in touch</h1>
 
-            <div className="h-4/5 mt-12 py-4 my-4">
-            <div className="h-full bg-contact-phone bg-cover bg-center bg-no-repeat relative">
+            <div className="h-4/5 mt-8 py-4 my-4">
+            <div className="h-full bg-contact-phone bg-cover bg-center bg-no-repeat relative rounded-md">
             <div className="h-full bg-black opacity-50"></div>
 
               <div className="absolute top-0 left-0 w-full h-full">
