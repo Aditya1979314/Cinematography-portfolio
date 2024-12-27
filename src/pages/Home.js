@@ -14,8 +14,8 @@ export function Home(){
               <Hero/>
               <Worksfeed/>
               <Brands/>
-              <div className="lg:hidden"><Contact/></div>
-              <div className="hidden lg:block"><ContactDesktop/></div>
+              <div className="md:hidden"><Contact/></div>
+              <div className="hidden md:block "><ContactDesktop/></div>
               <Footer/>
         </div>
     )

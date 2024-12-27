@@ -76,10 +76,11 @@ setpresentlink('Modelling')
              
          
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center md:hidden">
           <Worknavbar links={['Modelling','Wedding','Cinematic','Music','Editing','Cinematography']}  setpresentlink={setpresentlink}/>
             
-            <div>
+
+            <div className="">
                 {
                    presentdata &&  presentdata.map((url)=>{
                         return  <div className="w-full h-60 border-2 border-gray-100 mt-8">

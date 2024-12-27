@@ -67,20 +67,12 @@ initalrender();
 },[data,setphonedata,setdesktopdata])
 
 
-useEffect(()=>{
-console.log(phonedata)
-},[phonedata])
-
-useEffect(()=>{
-console.log(desktopdata)
-},[desktopdata])
-
     return (
-        <div className="px-4 h-svh border-white mt-2 flex flex-col justify-between lg:px-12 lg:py-16">
+        <div className="px-4 h-svh border-white mt-2 flex flex-col justify-between md:px-8 md:py-12 lg:px-12 lg:py-16">
             
-            <h1 className="text-3xl font-semibold text-white text-center lg:hidden">WORKS</h1>
+            <h1 className="text-3xl font-semibold text-white text-center md:hidden">WORKS</h1>
 
-            <div className="text-white text-xl flex justify-around mt-8 lg:hidden">
+            <div className="text-white text-xl flex justify-around mt-8 md:hidden">
                 <button className={`${(num === 0) ? "border-b-2 border-gray-100" : ""}`} onClick={(e)=>{
                     setnum(0)
                     }}>Cinematic</button>
@@ -93,10 +85,10 @@ console.log(desktopdata)
                 }>Reels</button>
             </div>
 
-            <div className="hidden lg:block lg:flex lg:justify-between lg:items-center">
+            <div className="hidden md:block md:flex md:justify-between md:items-center lg:pt-0">
             <h1 className="text-3xl font-semibold text-white text-center">WORKS</h1>
 
-            <div className="text-white text-xl flex justify-around lg:items-center lg:w-1/3 lg:h-full">
+            <div className="text-white text-xl flex justify-around md:items-center md:w-1/2 md:h-full">
             <button className={`${(num === 0) ? "border-b-2 border-gray-100" : ""}`} onClick={(e)=>{
             setnum(0)
             }}>Cinematic</button>
@@ -110,7 +102,7 @@ console.log(desktopdata)
             </div> 
             </div>
 
-            <div className="mt-8 border-white grid lg:hidden gap-x-12 gap-y-12">
+            <div className="mt-8 border-white grid lg:hidden gap-x-12 gap-y-12 md:hidden">
                 {(phonedata.length>0) && phonedata[num].map((url)=>{
                         return (
                             <div className="w-full h-60 border-2 border-gray-100">
@@ -121,7 +113,7 @@ console.log(desktopdata)
                 }
             </div>
 
-            <div className="hidden lg:block lg:grid lg:grid-cols-3 lg:gap-x-12 lg:gap-y-12 lg:mt-8">
+            <div className="hidden md:block md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-8 lg:block lg:grid lg:grid-cols-3 lg:gap-x-12 lg:gap-y-12 lg:mt-8">
                 {(desktopdata.length>0) && desktopdata[num].map((url)=>{
                     return(
                         <div className="w-full h-60 border-2 border-gray-100">
@@ -132,7 +124,7 @@ console.log(desktopdata)
                 }
             </div>
 
-            <div className="flex justify-center items-center mt-12">
+            <div className="flex justify-center items-center mt-6 md:mt-0 lg:mt-8">
             <Link to="/works" className="rounded-full cursor-pointer text-2xl bg-black border-white border-2 px-6 py-3  text-white hover:text-black hover:bg-white hover:border-black">Load More</Link>
             </div>
                 
