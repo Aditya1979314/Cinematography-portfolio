@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 
 
@@ -8,24 +8,79 @@ const[num,setnum] = useState(0);
 const[data,setdata] = useState([
     [
         "https://www.youtube.com/embed/ZcHTpqWcWFY?si=-lkcHbrW8l3sg6oU",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+         "https://www.youtube.com/embed/ZcHTpqWcWFY?si=-lkcHbrW8l3sg6oU",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+         "https://www.youtube.com/embed/ZcHTpqWcWFY?si=-lkcHbrW8l3sg6oU",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+        "https://www.youtube.com/embed/ZcHTpqWcWFY?si=-lkcHbrW8l3sg6oU",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+         "https://www.youtube.com/embed/ZcHTpqWcWFY?si=-lkcHbrW8l3sg6oU",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+         "https://www.youtube.com/embed/ZcHTpqWcWFY?si=-lkcHbrW8l3sg6oU",
         "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6"
     ],
     [
         "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+         "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+         "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
         "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6"
     ],
     [
         "https://www.youtube.com/embed/gcOyAwm2zp8?si=0EgQ29yUz8d4djVu",
-        "https://www.youtube.com/embed/gcOyAwm2zp8?si=0EgQ29yUz8d4djVu"
+        "https://www.youtube.com/embed/gcOyAwm2zp8?si=0EgQ29yUz8d4djVu",
+         "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+        "https://www.youtube.com/embed/gcOyAwm2zp8?si=0EgQ29yUz8d4djVu",
+        "https://www.youtube.com/embed/gcOyAwm2zp8?si=0EgQ29yUz8d4djVu",
+         "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6",
+        "https://www.youtube.com/embed/vgpH9go537Q?si=NFqX6HNxFo9YMcD6"
     ]
 ])
 
+const[phonedata,setphonedata] = useState([])
+
+const[desktopdata,setdesktopdata] = useState([]);
+
+useEffect(()=>{
+
+function initalrender(){
+let phonearr = [];
+let desktoparr = [];
+
+for(let i=0;i<data.length;i++){
+
+    phonearr[i] = data[i].slice(0,2);
+    desktoparr[i] = data[i].slice(0,6);
+}
+
+setphonedata(phonearr);
+setdesktopdata(desktoparr);
+}
+
+initalrender();
+
+},[data,setphonedata,setdesktopdata])
+
+
+useEffect(()=>{
+console.log(phonedata)
+},[phonedata])
+
+useEffect(()=>{
+console.log(desktopdata)
+},[desktopdata])
 
     return (
-        <div className="px-4 h-svh border-white mt-2 flex flex-col justify-between">
-            <h1 className="text-3xl font-semibold text-white text-center">WORKS</h1>
+        <div className="px-4 h-svh border-white mt-2 flex flex-col justify-between lg:px-12 lg:py-16">
+            
+            <h1 className="text-3xl font-semibold text-white text-center lg:hidden">WORKS</h1>
 
-            <div className="text-white text-xl flex justify-around mt-8">
+            <div className="text-white text-xl flex justify-around mt-8 lg:hidden">
                 <button className={`${(num === 0) ? "border-b-2 border-gray-100" : ""}`} onClick={(e)=>{
                     setnum(0)
                     }}>Cinematic</button>
@@ -38,14 +93,42 @@ const[data,setdata] = useState([
                 }>Reels</button>
             </div>
 
-            <div className="mt-8 border-white grid lg:grid-cols-3 lg:grid-cols-1 gap-x-12 gap-y-12">
-                {data[num].map((url)=>{
+            <div className="hidden lg:block lg:flex lg:justify-between lg:items-center">
+            <h1 className="text-3xl font-semibold text-white text-center">WORKS</h1>
+
+            <div className="text-white text-xl flex justify-around lg:items-center lg:w-1/3 lg:h-full">
+            <button className={`${(num === 0) ? "border-b-2 border-gray-100" : ""}`} onClick={(e)=>{
+            setnum(0)
+            }}>Cinematic</button>
+            <button className={`${(num === 1) ? "border-b-2 border-gray-100" : ""}`} onClick={(e)=>{
+            setnum(1)
+            }}>Wedding</button>
+            <button className={`${(num === 2) ? "border-b-2 border-gray-100" : ""}`} onClick={(e)=>{
+            setnum(2)
+            }       
+            }>Reels</button>
+            </div> 
+            </div>
+
+            <div className="mt-8 border-white grid lg:hidden gap-x-12 gap-y-12">
+                {(phonedata.length>0) && phonedata[num].map((url)=>{
                         return (
                             <div className="w-full h-60 border-2 border-gray-100">
                             <iframe className="w-full h-full" src={url} ></iframe>
                             </div>
                         ) 
                     })
+                }
+            </div>
+
+            <div className="hidden lg:block lg:grid lg:grid-cols-3 lg:gap-x-12 lg:gap-y-12 lg:mt-8">
+                {(desktopdata.length>0) && desktopdata[num].map((url)=>{
+                    return(
+                        <div className="w-full h-60 border-2 border-gray-100">
+                        <iframe className="w-full h-full" src={url} ></iframe>
+                        </div>
+                    )
+                })
                 }
             </div>
 

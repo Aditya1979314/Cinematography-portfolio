@@ -72,7 +72,7 @@ setpresentlink('Modelling')
 },[])
 
     return (
-        <div className="pt-24">
+        <div className="pt-24 overflow-hidden">
              
          
 

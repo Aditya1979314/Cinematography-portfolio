@@ -4,17 +4,18 @@
 
 export function Brands(){
     return (
-        <div className="mt-12"> 
-            <h1 className="text-3xl text-center font-bold text-white p-2">Brand Collaborations</h1>
+        <div className="mt-12 lg:px-8 lg:py-32"> 
+            <h1 className="text-3xl lg:6xl text-center font-bold text-white p-2">Brand Collaborations</h1>
 
-            <div className="grid grid-cols-2 gap-3 px-2 mt-8">
+            <div className="flex justify-around items-center px-4 pt-4 lg:px-1 mt-8">
                 <div>
-                    <img className="w-full h-20 object-contain" src={"/assests/ktmlogo.png"}/>   
+                    <img className="w-full h-20 lg:h-40 object-contain" src={"/assests/ktmlogo.png"}/>   
                 </div>
 
                 <div>
-                    <img className="w-full h-20 object-contain" src={"/assests/tvslogo.png"}/>
+                    <img className="w-full h-20 lg:h-40 object-contain" src={"/assests/tvslogo.png"}/>
                 </div>
+
             </div>
         </div>
     )
