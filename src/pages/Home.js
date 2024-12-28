@@ -16,7 +16,7 @@ export function Home(){
               <Brands/>
               <div className="md:hidden"><Contact/></div>
               <div className="hidden md:block "><ContactDesktop/></div>
-              <Footer/>
+             
         </div>
     )
 }

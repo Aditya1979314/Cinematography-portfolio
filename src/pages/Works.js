@@ -64,14 +64,11 @@ function onclickhandlerformediumscreen(nav){
     const newdata = data[nav].slice(currentcount,currentcount+3);
     setdesktopdata((prev) => ({
       ...prev,
-      [nav]: [...currentarr, ...newdata], // Update the specific key while keeping the rest intact
+      [nav]: [...currentarr, ...newdata], 
     }));
   }
 }
 
-useEffect(()=>{
-console.log(desktopdata)
-},[desktopdata])
 
 useEffect(()=>{
 function initalrender(){

@@ -9,6 +9,7 @@ import InstagramIcon from "./components/Instagramicon";
 import { Yticon } from "./components/Yticon";
 import Phonenavbar from "./components/Phonenavbar";
 import { Desktopnav } from "./components/Desktopnav";
+import { Footer } from "./components/Footer";
 
 
 function App() {
@@ -47,6 +48,7 @@ const[navbaropen,setnavbaropen] = useState(false);
           <Route path="/works" element={<Works/>}/>
         </Routes>
       </BrowserRouter>
+      <div className="md:pt-8"><Footer/></div>
     </div>
   );
 }
